@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<!-- This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
@@ -33,4 +33,93 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details. -->
+
+# 🚀 Ads Platform (Next.js + Supabase)
+
+Live Demo 👉 https://ads-platform-eight.vercel.app
+
+---
+
+## 📌 Project Overview
+
+This is a full-stack **Ads Management Platform** built with:
+
+- Next.js (App Router)
+- Supabase (Authentication + Database)
+- Vercel (Deployment)
+
+It allows users to:
+- Create ads
+- View ads
+- Approve/reject ads (Admin)
+- Login system
+- Dashboard management
+
+---
+
+## ⚙️ Tech Stack
+
+- Frontend: Next.js 13+
+- Backend: Supabase
+- Auth: Supabase Auth
+- Styling: CSS / Tailwind (if used)
+- Deployment: Vercel
+
+---
+
+
+
+## 📂 Project Structure
+app/
+admin/
+ads/
+login/
+create/
+approved/
+components/
+lib/
+supabase.js
+public/
+
+👉 These must also be added in Vercel Dashboard.
+
+---
+
+## 🚀 Deployment
+
+This project is deployed on Vercel:
+
+👉 https://ads-platform-eight.vercel.app
+
+Steps:
+1. Push code to GitHub
+2. Import repo in Vercel
+3. Add environment variables
+4. Deploy
+
+---
+
+## 👨‍💻 Features
+
+- User authentication
+- Create ads system
+- Admin approval system
+- Dashboard UI
+- Supabase database integration
+
+---
+
+
+
+## 📌 Author
+
+Developed by: **Maseera Zulfiqar**
+
+---
+
+## ⭐ Status
+
+✔ Fully deployed  
+✔ Working live  
+✔ Production ready
