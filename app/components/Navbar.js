@@ -65,6 +65,10 @@ export default function Navbar() {
           <Link href="/create" className="text-white hover:text-gray-200">Create Ad</Link>
           <Link href="/approved" className="text-white hover:text-gray-200">Approved</Link>
           <Link href="/admin" className="text-white hover:text-gray-200">Admin</Link>
+        
+//           <Link href="/login" className="text-white hover:text-gray-200">
+//             Login
+//           </Link>
         </div>
       </div>
 
@@ -76,6 +80,7 @@ export default function Navbar() {
           <Link href="/create" className="text-white">Create Ad</Link>
           <Link href="/approved" className="text-white">Approved</Link>
           <Link href="/admin" className="text-white">Admin</Link>
+          <link href="/login" className="text-white">Login</link>
         </div>
       )}
     </nav>
