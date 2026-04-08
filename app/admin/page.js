@@ -1,297 +1,30 @@
+﻿"use client"
 
-
-// "use client"
-
-// import { useEffect, useState } from "react"
-// import { supabase } from "@/lib/supabase"
-
-// export default function AdminPage() {
-
-//   const [ads, setAds] = useState([])
-//   const [loading, setLoading] = useState(true)
-
-//   const fetchAds = async () => {
-//     setLoading(true)
-
-//     const { data } = await supabase.from("ads").select("*")
-
-//     setAds(data || [])
-//     setLoading(false)
-//   }
-
-//   const updateStatus = async (id, status) => {
-//     await supabase
-//       .from("ads")
-//       .update({ status })
-//       .eq("id", id)
-
-//     fetchAds()
-//   }
-
-//   useEffect(() => {
-//     fetchAds()
-//   }, [])
-
-//   return (
-//     <div className="min-h-screen bg-gray-100 p-6">
-
-//       {/* Header */}
-//       <div className="max-w-6xl mx-auto mb-8">
-//         <h1 className="text-3xl font-bold text-gray-800">
-//           🛠 Admin Dashboard
-//         </h1>
-//         <p className="text-gray-500 mt-1">
-//           Manage all advertisements and their approval status
-//         </p>
-//       </div>
-
-//       {/* Content */}
-//       <div className="max-w-6xl mx-auto">
-
-//         {loading ? (
-//           <div className="text-center text-gray-500">
-//             Loading ads...
-//           </div>
-//         ) : ads.length === 0 ? (
-//           <div className="bg-white p-10 rounded-xl shadow text-center text-gray-500">
-//             No ads found
-//           </div>
-//         ) : (
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-//             {ads.map((ad) => (
-
-//               <div
-//                 key={ad.id}
-//                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-5 border border-gray-100"
-//               >
-
-//                 {/* Title */}
-//                 <h2 className="text-xl font-semibold text-gray-800">
-//                   {ad.title}
-//                 </h2>
-
-//                 {/* Description */}
-//                 <p className="text-gray-600 mt-2 text-sm line-clamp-3">
-//                   {ad.description}
-//                 </p>
-
-//                 {/* Status Badge */}
-//                 <div className="mt-4">
-//                   <span
-//                     className={`px-3 py-1 text-xs font-semibold rounded-full ${
-//                       ad.status === "approved"
-//                         ? "bg-green-100 text-green-700"
-//                         : ad.status === "rejected"
-//                         ? "bg-red-100 text-red-700"
-//                         : "bg-yellow-100 text-yellow-700"
-//                     }`}
-//                   >
-//                     {ad.status}
-//                   </span>
-//                 </div>
-
-//                 {/* Buttons */}
-//                 <div className="flex gap-2 mt-4">
-
-//                   <button
-//                     onClick={() => updateStatus(ad.id, "approved")}
-//                     className="flex-1 bg-green-600 hover:bg-green-700 text-white text-sm py-2 rounded-lg transition"
-//                   >
-//                     Approve
-//                   </button>
-
-//                   <button
-//                     onClick={() => updateStatus(ad.id, "rejected")}
-//                     className="flex-1 bg-red-600 hover:bg-red-700 text-white text-sm py-2 rounded-lg transition"
-//                   >
-//                     Reject
-//                   </button>
-
-//                 </div>
-
-//               </div>
-
-//             ))}
-
-//           </div>
-//         )}
-
-//       </div>
-//     </div>
-//   )
-// }
-
-// "use client"
-
-// import { useEffect, useState } from "react"
-// import { supabase } from "@/lib/supabase"
-
-// export default function AdminPage() {
-
-//   const [ads, setAds] = useState([])
-//   const [loading, setLoading] = useState(true)
-
-//   const fetchAds = async () => {
-//     setLoading(true)
-
-//     const { data } = await supabase.from("ads").select("*")
-
-//     setAds(data || [])
-//     setLoading(false)
-//   }
-
-//   const updateStatus = async (id, status) => {
-//     await supabase
-//       .from("ads")
-//       .update({ status })
-//       .eq("id", id)
-
-//     fetchAds()
-//   }
-
-//   useEffect(() => {
-//     fetchAds()
-//   }, [])
-
-//   return (
-//     <div className="min-h-screen bg-gray-100 p-6">
-
-//       {/* Header */}
-//       <div className="max-w-6xl mx-auto mb-8">
-//         <h1 className="text-3xl font-bold text-gray-800">
-//           🛠 Admin Dashboard
-//         </h1>
-//         <p className="text-gray-500 mt-1">
-//           Manage ads workflow (verification & publishing)
-//         </p>
-//       </div>
-
-//       {/* Content */}
-//       <div className="max-w-6xl mx-auto">
-
-//         {loading ? (
-//           <div className="text-center text-gray-500">
-//             Loading ads...
-//           </div>
-//         ) : ads.length === 0 ? (
-//           <div className="bg-white p-10 rounded-xl shadow text-center text-gray-500">
-//             No ads found
-//           </div>
-//         ) : (
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-//             {ads.map((ad) => (
-
-//               <div
-//                 key={ad.id}
-//                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-5 border border-gray-100"
-//               >
-
-//                 {/* Title */}
-//                 <h2 className="text-xl font-semibold text-gray-800">
-//                   {ad.title}
-//                 </h2>
-
-//                 {/* Description */}
-//                 <p className="text-gray-600 mt-2 text-sm line-clamp-3">
-//                   {ad.description}
-//                 </p>
-
-//                 {/* Status Badge */}
-//                 <div className="mt-4">
-//                   <span
-//                     className={`px-3 py-1 text-xs font-semibold rounded-full ${
-//                       ad.status === "published"
-//                         ? "bg-green-100 text-green-700"
-//                         : ad.status === "rejected"
-//                         ? "bg-red-100 text-red-700"
-//                         : ad.status === "payment_pending"
-//                         ? "bg-yellow-100 text-yellow-700"
-//                         : ad.status === "payment_submitted"
-//                         ? "bg-blue-100 text-blue-700"
-//                         : "bg-gray-100 text-gray-700"
-//                     }`}
-//                   >
-//                     {ad.status}
-//                   </span>
-//                 </div>
-
-//                 {/* Buttons */}
-//                 <div className="flex flex-wrap gap-2 mt-4">
-
-//                   {/* Verify Payment */}
-//                   {ad.status === "payment_submitted" && (
-//                     <button
-//                       onClick={() => updateStatus(ad.id, "verified")}
-//                       className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 rounded-lg"
-//                     >
-//                       Verify Payment
-//                     </button>
-//                   )}
-
-//                   {/* Publish */}
-//                   {ad.status === "verified" && (
-//                     <button
-//                       onClick={() => updateStatus(ad.id, "published")}
-//                       className="flex-1 bg-green-600 hover:bg-green-700 text-white text-sm py-2 rounded-lg"
-//                     >
-//                       Publish
-//                     </button>
-//                   )}
-
-//                   {/* Reject */}
-//                   {(ad.status === "submitted" || ad.status === "payment_submitted") && (
-//                     <button
-//                       onClick={() => updateStatus(ad.id, "rejected")}
-//                       className="flex-1 bg-red-600 hover:bg-red-700 text-white text-sm py-2 rounded-lg"
-//                     >
-//                       Reject
-//                     </button>
-//                   )}
-
-//                 </div>
-
-//               </div>
-
-//             ))}
-
-//           </div>
-//         )}
-
-//       </div>
-//     </div>
-//   )
-// }
-
-"use client"
-
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { supabase } from "@/lib/supabase"
 
 export default function AdminPage() {
-
   const [ads, setAds] = useState([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
 
   const fetchAds = async () => {
     setLoading(true)
+    setError("")
+    const { data, error } = await supabase.from("ads").select("*").order("created_at", { ascending: false })
 
-    const { data, error } = await supabase.from("ads").select("*")
-
-    if (!error) {
+    if (error) {
+      setError(error.message)
+      setAds([])
+    } else {
       setAds(data || [])
     }
-
     setLoading(false)
   }
 
   const updateStatus = async (id, status) => {
-    await supabase
-      .from("ads")
-      .update({ status })
-      .eq("id", id)
-
+    setLoading(true)
+    await supabase.from("ads").update({ status }).eq("id", id)
     fetchAds()
   }
 
@@ -299,133 +32,79 @@ export default function AdminPage() {
     fetchAds()
   }, [])
 
+  const stats = useMemo(() => ({
+    total: ads.length,
+    submitted: ads.filter((ad) => ad.status === "submitted").length,
+    published: ads.filter((ad) => ad.status === "published").length,
+    rejected: ads.filter((ad) => ad.status === "rejected").length,
+    paymentSubmitted: ads.filter((ad) => ad.status === "payment_submitted").length,
+  }), [ads])
+
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-slate-50 py-10">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="mb-8 rounded-3xl bg-white p-8 shadow-sm">
+          <h1 className="text-4xl font-bold text-slate-900">Admin Dashboard</h1>
+          <p className="mt-3 text-slate-600">Verify payments, review submitted listings, and publish approved ads.</p>
+        </div>
 
-      {/* Header */}
-      <div className="max-w-6xl mx-auto mb-8">
-        <h1 className="text-3xl font-bold text-gray-800">
-          🛠 Admin Dashboard
-        </h1>
-        <p className="text-gray-500 mt-1">
-          Manage complete ad workflow (testing mode)
-        </p>
-      </div>
+        <div className="grid gap-4 md:grid-cols-5 mb-8">
+          <StatCard label="Total Ads" value={stats.total} />
+          <StatCard label="Submitted" value={stats.submitted} />
+          <StatCard label="Payment Submitted" value={stats.paymentSubmitted} />
+          <StatCard label="Published" value={stats.published} />
+          <StatCard label="Rejected" value={stats.rejected} />
+        </div>
 
-      {/* Content */}
-      <div className="max-w-6xl mx-auto">
-
-        {loading ? (
-          <div className="text-center text-gray-500">
-            Loading ads...
-          </div>
-        ) : ads.length === 0 ? (
-          <div className="bg-white p-10 rounded-xl shadow text-center text-gray-500">
-            No ads found
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            {ads.map((ad) => (
-
-              <div
-                key={ad.id}
-                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-5 border border-gray-100"
-              >
-
-                {/* Title */}
-                <h2 className="text-xl font-semibold text-gray-800">
-                  {ad.title}
-                </h2>
-
-                {/* Description */}
-                <p className="text-gray-600 mt-2 text-sm line-clamp-3">
-                  {ad.description}
-                </p>
-
-                {/* Status Badge */}
-                <div className="mt-4">
-                  <span
-                    className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                      ad.status === "published"
-                        ? "bg-green-100 text-green-700"
-                        : ad.status === "rejected"
-                        ? "bg-red-100 text-red-700"
-                        : ad.status === "payment_pending"
-                        ? "bg-yellow-100 text-yellow-700"
-                        : ad.status === "payment_submitted"
-                        ? "bg-blue-100 text-blue-700"
-                        : ad.status === "verified"
-                        ? "bg-indigo-100 text-indigo-700"
-                        : "bg-gray-100 text-gray-700"
-                    }`}
-                  >
-                    {ad.status}
-                  </span>
-                </div>
-
-                {/* Buttons - ALL OPTIONS */}
-                <div className="flex flex-wrap gap-2 mt-4">
-
-                  <button
-                    onClick={() => updateStatus(ad.id, "submitted")}
-                    className="flex-1 bg-gray-500 hover:bg-gray-600 text-white text-xs py-2 rounded-lg"
-                  >
-                    Submitted
-                  </button>
-
-                  <button
-                    onClick={() => updateStatus(ad.id, "payment_pending")}
-                    className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white text-xs py-2 rounded-lg"
-                  >
-                    Payment Pending
-                  </button>
-
-                  <button
-                    onClick={() => updateStatus(ad.id, "payment_submitted")}
-                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-xs py-2 rounded-lg"
-                  >
-                    Payment Submitted
-                  </button>
-
-                  <button
-                    onClick={() => updateStatus(ad.id, "verified")}
-                    className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white text-xs py-2 rounded-lg"
-                  >
-                    Verify
-                  </button>
-
-                  <button
-                    onClick={() => updateStatus(ad.id, "published")}
-                    className="flex-1 bg-green-600 hover:bg-green-700 text-white text-xs py-2 rounded-lg"
-                  >
-                    Publish
-                  </button>
-
-                  <button
-                    onClick={() => updateStatus(ad.id, "expired")}
-                    className="flex-1 bg-gray-700 hover:bg-gray-800 text-white text-xs py-2 rounded-lg"
-                  >
-                    Expire
-                  </button>
-
-                  <button
-                    onClick={() => updateStatus(ad.id, "rejected")}
-                    className="flex-1 bg-red-600 hover:bg-red-700 text-white text-xs py-2 rounded-lg"
-                  >
-                    Reject
-                  </button>
-
-                </div>
-
-              </div>
-
-            ))}
-
-          </div>
+        {error && (
+          <div className="mb-6 rounded-3xl bg-red-100 p-5 text-red-700 shadow-sm">{error}</div>
         )}
 
+        {loading ? (
+          <div className="rounded-3xl bg-white p-12 text-center text-slate-500 shadow-sm">Loading ads...</div>
+        ) : ads.length === 0 ? (
+          <div className="rounded-3xl bg-white p-12 text-center text-slate-500 shadow-sm">No ads found.</div>
+        ) : (
+          <div className="grid gap-6">
+            {ads.map((ad) => (
+              <div key={ad.id} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h2 className="text-2xl font-semibold text-slate-900">{ad.title}</h2>
+                      <span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-600">{ad.status}</span>
+                    </div>
+                    <p className="mt-3 text-slate-600">{ad.description}</p>
+                    <div className="mt-4 flex flex-wrap gap-2 text-sm text-slate-500">
+                      <span>Package: {ad.package || ad.package_id || "Standard"}</span>
+                      <span>City: {ad.city || "N/A"}</span>
+                      <span>Created: {new Date(ad.created_at).toLocaleDateString()}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    <button onClick={() => updateStatus(ad.id, "submitted")} className="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-slate-700 hover:bg-slate-50">Submitted</button>
+                    <button onClick={() => updateStatus(ad.id, "payment_pending")} className="rounded-2xl border border-amber-300 bg-amber-50 px-4 py-2 text-amber-700 hover:bg-amber-100">Payment Pending</button>
+                    <button onClick={() => updateStatus(ad.id, "payment_submitted")} className="rounded-2xl border border-blue-300 bg-blue-50 px-4 py-2 text-blue-700 hover:bg-blue-100">Payment Submitted</button>
+                    <button onClick={() => updateStatus(ad.id, "verified")} className="rounded-2xl border border-indigo-300 bg-indigo-50 px-4 py-2 text-indigo-700 hover:bg-indigo-100">Verify</button>
+                    <button onClick={() => updateStatus(ad.id, "published")} className="rounded-2xl border border-emerald-300 bg-emerald-50 px-4 py-2 text-emerald-700 hover:bg-emerald-100">Publish</button>
+                    <button onClick={() => updateStatus(ad.id, "rejected")} className="rounded-2xl border border-red-300 bg-red-50 px-4 py-2 text-red-700 hover:bg-red-100">Reject</button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
+    </div>
+  )
+}
+
+function StatCard({ label, value }) {
+  return (
+    <div className="rounded-3xl bg-white p-6 text-center shadow-sm">
+      <div className="text-sm uppercase tracking-[0.3em] text-slate-500">{label}</div>
+      <div className="mt-4 text-3xl font-bold text-slate-900">{value}</div>
     </div>
   )
 }
