@@ -5,7 +5,9 @@
 # 🚀 Ads Platform (Next.js + Supabase)
 
 Live Demo 👉 https://ads-platform-eight.vercel.app
-
+**Login Credentials:**
+- Email: admin@gmail.com
+- Password: 123456
 ---
 
 ## 📌 Project Overview
