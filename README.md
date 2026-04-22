@@ -1,43 +1,46 @@
 
 
+# AdFlow Pro - Ads Management Platform
 
+A comprehensive full-stack advertising management platform built with modern web technologies, enabling users to create, manage, and moderate ads with role-based access control.
 
-# 🚀 Ads Platform (Next.js + Supabase)
-
-Live Demo 👉 https://ads-platform-eight.vercel.app
+**Live Demo:** [https://ads-platform-eight.vercel.app](https://ads-platform-eight.vercel.app)
 **Login Credentials:**
-- Email: admin@gmail.com
-- Password: 123456
----
+Email:admin@gmail.com
+Password:123456
 
-## 📌 Project Overview
 
-This is a full-stack **Ads Management Platform** built with:
 
-- Next.js (App Router)
-- Supabase (Authentication + Database)
-- Vercel (Deployment)
+## Features
 
-It allows users to:
-- Create ads
-- View ads
-- Approve/reject ads (Admin)
-- Login system
-- Dashboard management
+- **User Management** - Registration, authentication, and profile management
+- **Ad Creation & Management** - Create, edit, and manage advertisements
+- **Admin Dashboard** - Approve or reject ad submissions with detailed management capabilities
+- **Moderator Tools** - Review and moderate user-generated content
+- **Category & City-based Organization** - Browse ads by category and geographic location
+- **Role-Based Access Control** - Distinct user, admin, and moderator roles
+- **Responsive Design** - Works seamlessly across all devices
 
----
+## Technology Stack
 
-## ⚙️ Tech Stack
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | Next.js 13+ (App Router) |
+| **Backend** | Supabase (PostgreSQL) |
+| **Authentication** | Supabase Auth |
+| **Styling** | CSS / Tailwind CSS |
+| **Deployment** | Vercel |
+| **Runtime** | Node.js |
 
-- Frontend: Next.js 13+
-- Backend: Supabase
-- Auth: Supabase Auth
-- Styling: CSS / Tailwind (if used)
-- Deployment: Vercel
+## Getting Started
 
----
+### Prerequisites
 
-## 📦 Installation
+- Node.js 16+ installed
+- npm or yarn package manager
+- Supabase account ([create one here](https://supabase.com))
+
+### Installation
 
 1. **Clone the repository:**
    ```bash
@@ -50,21 +53,21 @@ It allows users to:
    npm install
    ```
 
-3. **Set up Supabase:**
-   - Create a new project on [Supabase](https://supabase.com).
-   - Go to Settings > API to get your project URL and anon key.
-   - Create a `.env.local` file in the root directory and add:
+3. **Configure Supabase:**
+   - Create a new project on [Supabase Dashboard](https://supabase.com)
+   - Navigate to **Settings > API** to retrieve your credentials
+   - Create a `.env.local` file in the project root and add the following:
      ```
      NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
      NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
      ```
-   - Set up your database tables (e.g., ads, users) in Supabase Dashboard.
+   - Set up required database tables in Supabase Dashboard
 
 4. **Run the development server:**
    ```bash
    npm run dev
    ```
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+   The application will be available at [http://localhost:3000](http://localhost:3000)
 
 5. **Build for production:**
    ```bash
@@ -72,19 +75,13 @@ It allows users to:
    npm start
    ```
 
----
+## Demo Credentials
 
-## 🚀 Live Demo
+Access the live demo with the following credentials:
+- **Email:** admin@gmail.com
+- **Password:** 123456
 
-👉 **Vercel Live Link:** https://ads-platform-eight.vercel.app
-
-**Demo Credentials:**
-- Email: admin@gmail.com
-- Password: 123456
-
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```
 adflow-pro/
