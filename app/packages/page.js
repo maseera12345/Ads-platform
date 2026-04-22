@@ -10,26 +10,29 @@ const packages = [
 
 export default function PackagesPage() {
   return (
-    <div className="min-h-screen bg-slate-50 py-10">
+    <div className="min-h-screen bg-slate-50 py-12">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-8 text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Package engine</p>
-          <h1 className="text-4xl font-bold text-slate-900">Listing Packages</h1>
-          <p className="mt-4 text-slate-600">Compare package durations, homepage placement, and ranking weight.</p>
+        <div className="mb-12 text-center">
+          <p className="text-sm uppercase tracking-[0.3em] text-slate-500 font-semibold">Package Engine</p>
+          <h1 className="mt-2 text-4xl font-bold text-slate-900">Listing Packages</h1>
+          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">Compare package durations, homepage placement, and ranking weight.</p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3">
           {packages.map((pkg) => (
-            <div key={pkg.name} className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:shadow-xl">
-              <div className="text-sm uppercase tracking-[0.3em] text-slate-500">{pkg.name}</div>
-              <h2 className="mt-4 text-3xl font-semibold text-slate-900">{pkg.duration}</h2>
-              <p className="mt-2 text-slate-600">{pkg.price}</p>
-              <ul className="mt-6 space-y-3 text-slate-600">
+            <div key={pkg.name} className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md transition-all duration-200 hover:shadow-lg hover:border-blue-500 hover:-translate-y-1">
+              <div className="text-xs uppercase tracking-[0.3em] text-slate-500 font-semibold">{pkg.name}</div>
+              <h2 className="mt-4 text-3xl font-bold text-slate-900">{pkg.duration}</h2>
+              <p className="mt-2 text-sm text-blue-600 font-semibold">{pkg.price}</p>
+              <ul className="mt-6 space-y-3">
                 {pkg.features.map((feature) => (
-                  <li key={feature}>• {feature}</li>
+                  <li key={feature} className="text-slate-600 text-sm flex items-start gap-2">
+                    <span className="text-blue-600 font-bold mt-0.5">✓</span>
+                    <span>{feature}</span>
+                  </li>
                 ))}
               </ul>
-              <Link href="/create" className="mt-8 inline-flex rounded-full bg-blue-600 px-5 py-3 text-white hover:bg-blue-700 transition">Choose {pkg.name}</Link>
+              <Link href="/create" className="mt-8 inline-flex rounded-lg bg-blue-600 hover:bg-blue-700 px-5 py-3 text-white font-semibold transition-all duration-200 shadow-sm hover:shadow-md">Choose {pkg.name}</Link>
             </div>
           ))}
         </div>

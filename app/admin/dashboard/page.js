@@ -31,9 +31,9 @@ export default function Dashboard() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-slate-50 p-6 py-12">
 
-      <h1 className="text-3xl font-bold mb-6">
+      <h1 className="text-4xl font-bold mb-10 text-slate-900">
         📊 Analytics Dashboard
       </h1>
 

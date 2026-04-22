@@ -1,38 +1,3 @@
-// import Link from 'next/link';
-
-// export default function Navbar() {
-//   return (
-//     <nav className="bg-blue-600 p-4">
-//       <div className="container mx-auto flex justify-between items-center">
-//         <Link href="/" className="text-white text-xl font-bold">
-//           AdFlow Pro
-//         </Link>
-//         <div className="space-x-4">
-//           <Link href="/" className="text-white hover:text-gray-200">
-//             Home
-//           </Link>
-//           <Link href="/ads" className="text-white hover:text-gray-200">
-//             Ads
-//           </Link>
-//           <Link href="/create" className="text-white hover:text-gray-200">
-//             Create Ad
-//           </Link>
-//           <Link href="/approved" className="text-white hover:text-gray-200">
-//             Approved
-//           </Link>
-//           <Link href="/admin" className="text-white hover:text-gray-200">
-//             Admin
-//           </Link>
-//           {/* <Link href="/login" className="text-white hover:text-gray-200">
-//             Login
-//           </Link> */}
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// }
-
-
 "use client";
 
 import Link from "next/link";
@@ -42,46 +7,47 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-600 p-4 shadow-lg">
-      <div className="container mx-auto flex flex-wrap items-center justify-between gap-4">
-        <Link href="/" className="text-white text-xl font-bold">
-          AdFlow Pro
+    <nav className="bg-slate-900 border-b border-slate-800 shadow-lg sticky top-0 z-50">
+      <div className="container mx-auto flex flex-wrap items-center justify-between gap-4 px-6 py-4">
+        <Link href="/" className="text-white text-2xl font-bold tracking-tight">
+          <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">AdFlow</span>
+          <span className="text-white"> Pro</span>
         </Link>
 
         <button
-          className="text-white md:hidden"
+          className="text-slate-300 hover:text-white md:hidden transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Open menu"
         >
           ☰
         </button>
 
-        <div className="hidden md:flex flex-wrap items-center gap-4 text-sm font-medium text-white">
-          <Link href="/">Home</Link>
-          <Link href="/ads">Explore</Link>
-          <Link href="/packages">Packages</Link>
-          <Link href="/create">Create</Link>
-          <Link href="/approved">Published</Link>
-          <Link href="/dashboard">Dashboard</Link>
-          <Link href="/moderator">Moderator</Link>
-          <Link href="/admin">Admin</Link>
-          <Link href="/login" className="rounded-full border border-white px-3 py-1 hover:bg-white hover:text-blue-600 transition">
+        <div className="hidden md:flex flex-wrap items-center gap-1 text-sm font-medium">
+          <Link href="/" className="text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors hover:bg-slate-800">Home</Link>
+          <Link href="/ads" className="text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors hover:bg-slate-800">Explore</Link>
+          <Link href="/packages" className="text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors hover:bg-slate-800">Packages</Link>
+          <Link href="/create" className="text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors hover:bg-slate-800">Create</Link>
+          <Link href="/approved" className="text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors hover:bg-slate-800">Published</Link>
+          <Link href="/dashboard" className="text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors hover:bg-slate-800">Dashboard</Link>
+          <Link href="/moderator" className="text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors hover:bg-slate-800">Moderator</Link>
+          <Link href="/admin" className="text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors hover:bg-slate-800">Admin</Link>
+          <Link href="/login" className="ml-4 rounded-lg border border-blue-500 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 font-semibold transition-all duration-200 hover:shadow-lg">
             Login
           </Link>
         </div>
       </div>
 
       {open && (
-        <div className="md:hidden flex flex-col gap-2 mt-4 px-2 text-white">
-          <Link href="/" className="block rounded-2xl px-4 py-3 hover:bg-blue-500">Home</Link>
-          <Link href="/ads" className="block rounded-2xl px-4 py-3 hover:bg-blue-500">Explore</Link>
-          <Link href="/packages" className="block rounded-2xl px-4 py-3 hover:bg-blue-500">Packages</Link>
-          <Link href="/create" className="block rounded-2xl px-4 py-3 hover:bg-blue-500">Create</Link>
-          <Link href="/approved" className="block rounded-2xl px-4 py-3 hover:bg-blue-500">Published</Link>
-          <Link href="/dashboard" className="block rounded-2xl px-4 py-3 hover:bg-blue-500">Dashboard</Link>
-          <Link href="/moderator" className="block rounded-2xl px-4 py-3 hover:bg-blue-500">Moderator</Link>
-          <Link href="/admin" className="block rounded-2xl px-4 py-3 hover:bg-blue-500">Admin</Link>
-          <Link href="/login" className="block rounded-2xl bg-white px-4 py-3 text-blue-600 font-semibold">Login</Link>
+        <div className="md:hidden flex flex-col gap-1 px-6 pb-4 border-t border-slate-800">
+          <Link href="/" className="text-slate-300 hover:text-white block rounded-lg px-4 py-3 hover:bg-slate-800 transition-colors">Home</Link>
+          <Link href="/ads" className="text-slate-300 hover:text-white block rounded-lg px-4 py-3 hover:bg-slate-800 transition-colors">Explore</Link>
+          <Link href="/packages" className="text-slate-300 hover:text-white block rounded-lg px-4 py-3 hover:bg-slate-800 transition-colors">Packages</Link>
+          <Link href="/create" className="text-slate-300 hover:text-white block rounded-lg px-4 py-3 hover:bg-slate-800 transition-colors">Create</Link>
+          <Link href="/approved" className="text-slate-300 hover:text-white block rounded-lg px-4 py-3 hover:bg-slate-800 transition-colors">Published</Link>
+          <Link href="/dashboard" className="text-slate-300 hover:text-white block rounded-lg px-4 py-3 hover:bg-slate-800 transition-colors">Dashboard</Link>
+          <Link href="/moderator" className="text-slate-300 hover:text-white block rounded-lg px-4 py-3 hover:bg-slate-800 transition-colors">Moderator</Link>
+          <Link href="/admin" className="text-slate-300 hover:text-white block rounded-lg px-4 py-3 hover:bg-slate-800 transition-colors">Admin</Link>
+          <Link href="/login" className="block rounded-lg bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 font-semibold mt-2 transition-all duration-200 text-center">Login</Link>
         </div>
       )}
     </nav>

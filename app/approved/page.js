@@ -28,26 +28,26 @@ export default function ApprovedAds() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-slate-100 p-6">
-      <div className="max-w-6xl mx-auto mb-8">
-        <h1 className="text-3xl font-bold text-slate-900">✅ Published Listings</h1>
-        <p className="text-slate-600 mt-1">This page shows all ads that passed approval and are live.</p>
+    <div className="min-h-screen bg-slate-50 p-6 py-12">
+      <div className="max-w-6xl mx-auto mb-10">
+        <h1 className="text-4xl font-bold text-slate-900">✅ Published Listings</h1>
+        <p className="text-slate-600 mt-2">This page shows all ads that passed approval and are live.</p>
       </div>
 
       <div className="max-w-6xl mx-auto">
         {loading ? (
-          <div className="text-center text-slate-500">Loading approved ads...</div>
+          <div className="text-center text-slate-500 rounded-2xl bg-white p-12 shadow-md border border-slate-200">Loading approved ads...</div>
         ) : ads.length === 0 ? (
-          <div className="text-center text-slate-500 bg-white p-10 rounded-3xl shadow">No approved ads found</div>
+          <div className="text-center text-slate-500 bg-white p-12 rounded-2xl shadow-md border border-slate-200">No approved ads found</div>
         ) : (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {ads.map((ad) => (
-              <div key={ad.id} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-xl">
-                <h2 className="text-xl font-semibold text-slate-900">{ad.title}</h2>
-                <p className="mt-3 text-slate-600">{ad.description}</p>
-                <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-500">
-                  <span>{ad.city || "Location not specified"}</span>
-                  <span className="rounded-full bg-emerald-100 px-3 py-1 text-emerald-700">Published</span>
+              <div key={ad.id} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-200 hover:shadow-lg hover:border-blue-500 hover:-translate-y-1">
+                <h2 className="text-lg font-bold text-slate-900">{ad.title}</h2>
+                <p className="mt-3 text-slate-600 text-sm line-clamp-2">{ad.description}</p>
+                <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-sm">
+                  <span className="text-slate-600">📍 {ad.city || "Location not specified"}</span>
+                  <span className="rounded-lg bg-emerald-100 text-emerald-700 px-3 py-1 font-semibold">Published</span>
                 </div>
               </div>
             ))}

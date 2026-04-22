@@ -26,21 +26,17 @@ export default function TestPage() {
   }
 
   return (
-    <div style={{ padding: "40px" }}>
-      <h1>Supabase Test</h1>
+    <div className="min-h-screen bg-slate-50 p-6 py-12">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-4xl font-bold text-slate-900 mb-8">Supabase Connection Test</h1>
 
-      <button
-        onClick={insertData}
-        style={{
-          padding: "10px 20px",
-          background: "blue",
-          color: "white",
-          border: "none",
-          cursor: "pointer"
-        }}
-      >
-        Insert Data
-      </button>
+        <button
+          onClick={insertData}
+          className="rounded-lg bg-blue-600 hover:bg-blue-700 px-6 py-3 text-white font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
+        >
+          Insert Test Data
+        </button>
+      </div>
     </div>
   )
 }

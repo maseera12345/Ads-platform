@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import Link from "next/link"
 import { useState } from "react"
@@ -29,10 +29,10 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4 py-10">
-      <div className="w-full max-w-md rounded-3xl bg-white p-8 shadow-xl">
-        <h1 className="text-3xl font-bold text-slate-900 mb-4 text-center">Login to AdFlow Pro</h1>
-        <p className="text-slate-500 text-center mb-8">Use your account to manage ads, reviews, and payments.</p>
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4 py-10">
+      <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-md border border-slate-200">
+        <h1 className="text-3xl font-bold text-slate-900 mb-2 text-center">Login to AdFlow Pro</h1>
+        <p className="text-slate-600 text-center mb-8 text-sm">Use your account to manage ads, reviews, and payments.</p>
 
         <label className="block mb-4">
           <span className="text-sm font-semibold text-slate-700">Email</span>
@@ -40,7 +40,7 @@ export default function Login() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-500"
+            className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20 transition"
           />
         </label>
 
@@ -50,20 +50,20 @@ export default function Login() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-500"
+            className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20 transition"
           />
         </label>
 
         <button
           onClick={handleLogin}
           disabled={loading}
-          className="w-full rounded-2xl bg-blue-600 px-4 py-3 text-white font-semibold hover:bg-blue-700 transition disabled:cursor-not-allowed disabled:opacity-70"
+          className="w-full rounded-lg bg-blue-600 hover:bg-blue-700 px-4 py-3 text-white font-semibold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-70 shadow-sm hover:shadow-md"
         >
           {loading ? "Logging in..." : "Login"}
         </button>
 
-        <p className="mt-6 text-center text-sm text-slate-500">
-          Don't have an account? <Link href="/register" className="text-blue-600 hover:underline">Register here</Link>
+        <p className="mt-6 text-center text-sm text-slate-600">
+          Don't have an account? <Link href="/register" className="text-blue-600 hover:text-blue-700 font-semibold transition">Register here</Link>
         </p>
       </div>
     </div>
