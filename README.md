@@ -4,10 +4,8 @@
 
 A comprehensive full-stack advertising management platform built with modern web technologies, enabling users to create, manage, and moderate ads with role-based access control.
 
-**Live Demo:** [https://ads-platform-eight.vercel.app](https://ads-platform-eight.vercel.app)
-**Login Credentials:**
-Email:admin@gmail.com
-Password:123456
+**Live Demo:** adflow-pro-marketplace.vercel.app
+
 
 
 
