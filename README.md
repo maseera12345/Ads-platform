@@ -4,7 +4,7 @@
 
 A comprehensive full-stack advertising management platform built with modern web technologies, enabling users to create, manage, and moderate ads with role-based access control.
 
-**Live Demo:** adflow-pro-marketplace.vercel.app
+**Live Demo:** https://adflow-pro-marketplace.vercel.app/
 
 
 
